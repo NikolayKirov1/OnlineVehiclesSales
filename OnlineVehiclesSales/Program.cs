@@ -1,7 +1,3 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using OnlineVehiclesSales.Data;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApplicationDbContext(builder.Configuration);

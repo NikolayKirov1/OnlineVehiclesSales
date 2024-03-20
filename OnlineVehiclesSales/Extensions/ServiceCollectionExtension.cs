@@ -1,7 +1,6 @@
-﻿//using OnlineVehiclesSales.Infrastructure.Data;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using OnlineVehiclesSales.Data;
+using OnlineVehiclesSales.Infrastructure.Data;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -15,7 +14,7 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection AddApplicationDbContext(this IServiceCollection services, IConfiguration config)
         {
             var connectionString = config.GetConnectionString("DefaultConnection");
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<OnlineVehiclesSalesDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
@@ -34,7 +33,7 @@ namespace Microsoft.Extensions.DependencyInjection
                     options.Password.RequireLowercase = false;
                     options.Password.RequireUppercase = false;
                 })
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<OnlineVehiclesSalesDbContext>();
 
             return services;
         }
