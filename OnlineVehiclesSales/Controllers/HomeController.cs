@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OnlineVehiclesSales.Core.Models.Home;
 using OnlineVehiclesSales.Models;
 using System.Diagnostics;
 
@@ -15,9 +16,10 @@ namespace OnlineVehiclesSales.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
+            var model = new IndexViewModel();
 
+            return View(model);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

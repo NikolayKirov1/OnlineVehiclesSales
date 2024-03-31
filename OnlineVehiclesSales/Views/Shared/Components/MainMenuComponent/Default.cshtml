@@ -1,20 +1,50 @@
-﻿@*<ul class="navbar-nav flex-grow-1">
+﻿<ul class="navbar-nav flex-grow-1">
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="All">All Cars</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="All">Cars</a>
+    </li>
+    @if (this.User?.Identity?.IsAuthenticated ?? false)
+    {
+                <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="Mine">My Cars</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="Index">Add Car</a>
+                </li>
+    }
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Van" asp-action="All">Vans</a>
+    </li>
+    @if (this.User?.Identity?.IsAuthenticated ?? false)
+    {
+                <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Van" asp-action="Mine">My Vans</a>
+                </li>
+                <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Van" asp-action="Index">Add Van</a>
+                </li>
+    }
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Motorcycle" asp-action="All">Motorcycles</a>
+    </li>
+    @if (this.User?.Identity?.IsAuthenticated ?? false)
+    {
+                <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Motorcycle" asp-action="Mine">My Motorcycles</a>
+                </li>
+                <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Motorcycle" asp-action="Index">Add Motorcycle</a>
+                </li>
+    }
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Truck" asp-action="All">Trucks</a>
     </li>
     @if (this.User?.Identity?.IsAuthenticated ?? false)
     {
             <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="Mine">My Cars</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Truck" asp-action="Mine">My Trucks</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="Index">Add Car</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Truck" asp-action="Index">Add Truck</a>
             </li>
     }
-</ul>*@
-
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                    </ul>
+</ul>
